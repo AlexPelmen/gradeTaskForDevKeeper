@@ -1,0 +1,33 @@
+.header {
+    width: 100%;
+}
+.logo-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 32px;
+    height: 54px;
+}
+.authLink {
+    display: inline-block;
+    text-align: right;
+    margin-top: -10px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.navbar-list {
+    padding: 0;
+}
+.navbar-list li {
+    padding-right: 24.4px;
+    display: inline;
+}
+.navbar-item-selected {
+    color: #7BA4DB;
+}
