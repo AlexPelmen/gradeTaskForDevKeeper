@@ -1,6 +1,7 @@
 import * as React from "react";
 import Grave from "./Grave/Grave";
 import Settings from "./Settings/Settings";
+import './style.css'
 
 export default class Editor extends React.Component {
     render() {

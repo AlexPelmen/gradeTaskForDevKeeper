@@ -18,7 +18,7 @@ export default class Grave extends React.Component<GraveProps> {
         const {className} = this.props;
         return (
             <div className={className}>
-                <canvas height='872' width='798' id={this.canvasID}>Обновите браузер</canvas>
+                <canvas height='798' width='872' id={this.canvasID}>Обновите браузер</canvas>
             </div>
         )
     }

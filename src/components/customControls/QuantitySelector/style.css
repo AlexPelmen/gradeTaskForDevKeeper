@@ -1,0 +1,58 @@
+.custom-quantity-selector-wrapper {
+    background: #fff;
+    margin-bottom: 12px;
+    padding: 4px 12px 9px 6px;
+}
+.custom-quantity-selector-frame {
+    padding: 16px 19px 13px 25px;
+}
+.custom-quantity-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.custom-quantity-selector-title {
+    font-family: Montserrat, serif ;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333F48;
+
+}
+.custom-quantity-selector-current-number {
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333F48;
+    padding: 9px 25px 7px 26px;
+    border: 1px solid #DEDEDE;
+    border-radius: 6px;
+
+    margin-right: 8px;
+}
+.custom-quantity-selector-numbers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.custom-quantity-selector-item {
+    padding: 7px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px solid #DEDEDE;
+    border-radius: 2px;
+    font-family: Montserrat, serif;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+}
+.custom-quantity-selector-selected {
+    background: #7BA4DB;
+    color: #FFFFFF;
+    border: none;
+}

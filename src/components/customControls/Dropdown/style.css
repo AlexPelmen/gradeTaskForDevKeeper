@@ -1,15 +1,31 @@
 .custom-dropdown-wrapper {
-
+    background: #fff;
+    margin-bottom: 12px;
+    padding: 26px;
 }
 .custom-dropdown-frame {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .custom-dropdown-title {
+    font-family: Montserrat, serif ;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333F48;
 
 }
 .custom-dropdown-chevron {
-
+    width: 16px;
+    height: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.custom-dropdown-chevron:hover {
+    transform: scale(1.5);
+    transition: 0.2s;
 }
 .custom-dropdown-content {
-
+    margin-top: 26px;
 }

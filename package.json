@@ -2,6 +2,8 @@
   "name": "devkeeper",
   "version": "0.0.1",
   "dependencies": {
+    "@types/jquery": "^3.5.13",
+    "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
