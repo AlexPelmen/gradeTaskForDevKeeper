@@ -29,7 +29,6 @@ export default class Dropdown extends React.Component<DropdownProps> {
     }
 
     click() {
-        console.log(12);
         const id = this.prefix + this.props.id;
         const $content = $(`#${id} .custom-dropdown-content`);
         const $chevron = $(`#${id} .custom-dropdown-frame .custom-dropdown-chevron`);
