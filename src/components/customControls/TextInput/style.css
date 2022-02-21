@@ -1,0 +1,39 @@
+.custom-text-input-wrapper {
+
+}
+.custom-text-input-current-text {
+    font-family: Montserrat, serif ;
+    font-weight: 100;
+    font-size: 12px;
+    color: #777;
+
+    padding: 0 0 20px 0;
+}
+.custom-text-input-group {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+#custom-text-input {
+    font-family: Montserrat, serif ;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333F48;
+    padding: 10px;
+    border: 1px solid #96a4af;
+    border-radius: 6px 0 0 6px;
+}
+.custom-text-button {
+    background: #7BA4DB;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    transition: 0.2s;
+    font-size: 16px;
+    cursor: pointer;
+}
+.custom-text-button:hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+}
+

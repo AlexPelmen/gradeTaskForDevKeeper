@@ -3,7 +3,6 @@ import './style.css';
 import CustomCheckBox from "../customControls/Checkbox/CustomCheckBox";
 
 export default class Header extends React.Component {
-
     render() {
         return (
             <div className = 'header'>
@@ -22,7 +21,14 @@ export default class Header extends React.Component {
                         <li className='navbar-item' >Декорации</li>
                     </ul>
 
-                    <CustomCheckBox id='module-system' name='module-system' value='true' >Модульная система</CustomCheckBox>
+                    <CustomCheckBox
+                        id='module-system'
+                        name='module-system'
+                        value='true'
+                        callback={(checked) => {
+                            console.log(checked ? 'модульная' : 'не модульная' )
+                        }}
+                    >Модульная система</CustomCheckBox>
                 </div>
             </div>
         )

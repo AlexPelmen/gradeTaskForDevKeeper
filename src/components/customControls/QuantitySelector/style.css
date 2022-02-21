@@ -21,6 +21,8 @@
 
 }
 .custom-quantity-selector-current-number {
+    width: 62px;
+    height: 40px;
     background: #FFFFFF;
     display: flex;
     align-items: center;
@@ -29,7 +31,6 @@
     font-size: 16px;
     line-height: 20px;
     color: #333F48;
-    padding: 9px 25px 7px 26px;
     border: 1px solid #DEDEDE;
     border-radius: 6px;
 
@@ -41,8 +42,7 @@
     grid-template-columns: 1fr 1fr;
 }
 .custom-quantity-selector-item {
-    padding: 7px;
-    padding-bottom: 5px;
+    padding: 7px 7px 5px;
     text-align: center;
     border: 1px solid #DEDEDE;
     border-radius: 2px;
@@ -50,9 +50,17 @@
     font-size: 16px;
     line-height: 20px;
     margin: 0;
+    transition: 0.2s;
+    cursor: pointer;
+    z-index: 100;
+}
+.custom-quantity-selector-item:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
 }
 .custom-quantity-selector-selected {
     background: #7BA4DB;
     color: #FFFFFF;
     border: none;
+    z-index: 1000;
 }

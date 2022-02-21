@@ -1,35 +1,59 @@
 import React from "react";
 import './style.css';
+import QuantitySelectorItem from "./QuantitySelectorItem";
 
 type QuantitySelectorProps = {
-    id: string,
     caption: string,
     numbers: number,
+    selectedNumber: number,
+    className: string,
+    callback: (number: number) => void
 }
 
-export default class QuantitySelector extends React.Component<QuantitySelectorProps> {
-    readonly prefix = 'custom-quantity-selector-';
+type QuantitySelectorState = {
+    selectedNumber: number,
+}
 
+export default class QuantitySelector extends React.Component<QuantitySelectorProps, QuantitySelectorState> {
     constructor(props: QuantitySelectorProps) {
         super(props);
+        this.state = {selectedNumber: this.props.selectedNumber}
     }
 
     render() {
-        const {id, caption} = this.props;
+        const {className, caption} = this.props;
         return (
-            <div className='custom-quantity-selector-wrapper' id={this.prefix + id}>
+            <div className={className + ' custom-quantity-selector-wrapper'} >
                 <div className='custom-quantity-selector-frame'>
                     <div className='custom-quantity-selector-header' >
                         <div className='custom-quantity-selector-title'>{caption}</div>
-                        <div className='custom-quantity-selector-current-number'>2</div>
+                        <div className='custom-quantity-selector-current-number'>{this.state.selectedNumber}</div>
                     </div>
                     <div className='custom-quantity-selector-numbers'>
-                        <div className='custom-quantity-selector-item custom-quantity-selector-selected' >1</div>
-                        <div className='custom-quantity-selector-item' >2</div>
+                        {this.getNumbers()}
                     </div>
                 </div>
             </div>
-
         )
+    }
+
+    getNumbers() {
+        const batchHTML = [];
+        for(let number = 1; number < this.props.numbers + 1; number++) {
+            const isSelected = number === this.state.selectedNumber;
+            batchHTML.push(<QuantitySelectorItem
+                caption={number}
+                id={number}
+                isSelected={isSelected}
+                callback={this.click.bind(this)}
+            />);
+        }
+
+        return batchHTML;
+    }
+
+    click(number: number) {
+        this.setState({selectedNumber: number});
+        this.props.callback(number);
     }
 }

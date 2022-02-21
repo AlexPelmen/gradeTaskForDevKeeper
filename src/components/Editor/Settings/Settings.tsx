@@ -4,6 +4,7 @@ import QuantitySelector from "../../customControls/QuantitySelector/QuantitySele
 import './style.css'
 import CustomButtonList from "../../customControls/CustomButtonList/CustomButtonList";
 import MaterialPicker from "../../customControls/MaterialPicker/MaterialPicker";
+import TextInput from "../../customControls/TextInput/CustomButtonList";
 
 type SettingsProps = {
     className: string,
@@ -18,7 +19,15 @@ export default class Settings extends React.Component<SettingsProps> {
         const {className} = this.props;
         return (
             <div className={className}>
-                <QuantitySelector id='quantity' caption='Количество памятников' numbers={2} />
+                <QuantitySelector
+                    className='quantity-selector'
+                    caption='Количество памятников'
+                    selectedNumber={1}
+                    numbers={2}
+                    callback={(number: number) => {
+                        console.log(number);
+                    }}
+                />
 
                 <Dropdown id='form' caption='Форма'>
                     <CustomButtonList
@@ -60,7 +69,9 @@ export default class Settings extends React.Component<SettingsProps> {
                     />
                 </Dropdown>
                 <Dropdown id='engraving' caption='Гравировка'>
-
+                    <TextInput className='engrave-input' callback={(text) => {
+                        console.log('Text = ' + text)
+                    }}/>
                 </Dropdown>
 
             </div>
