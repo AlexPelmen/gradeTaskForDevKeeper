@@ -7,4 +7,6 @@ export const DEFAULT_MATERIAL = MaterialEnum.marble;
 export const DEFAULT_ENGRAVING = '';
 
 export const BACKGROUND_GRAVEYARD = 'img/graveyard.png'
+export const X_COORD_GRAVE_STONE = 400;
+export const Y_COORD_GRAVE_STONE = 350;
 

@@ -49,11 +49,12 @@ export default class QuantitySelector extends React.Component<QuantitySelectorPr
             batchHTML.push(<QuantitySelectorItem
                 caption={number}
                 id={number}
+                key={number}
                 isSelected={isSelected}
                 callback={callback}
             />);
         }
-        
+
         return batchHTML;
     }
 }

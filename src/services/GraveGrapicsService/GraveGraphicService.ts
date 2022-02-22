@@ -10,39 +10,31 @@ export default class GraveGraphicService {
     material: MaterialEnum;
     engraving: string;
 
-    constructor(canvasID: string) {
-        this.canvasService = new CanvasService(canvasID);
+    constructor() {
+        this.canvasService = new CanvasService();
         this.form = DEFAULT_FORM;
         this.size = DEFAULT_SIZE;
         this.material = DEFAULT_MATERIAL;
         this.engraving = DEFAULT_ENGRAVING;
     }
 
-    init() {
-        this.canvasService.init();
+    init(canvasID: string) {
+        this.canvasService.init(canvasID);
+        this.draw();
     }
 
     setForm(form: FormEnum) {
         this.form = form;
-        this.redraw();
+        this.draw();
     }
 
     setSize(size: SizeEnum) {
         this.size = size;
-        this.redraw();
+        this.draw();
     }
 
-    setMaterial(material: MaterialEnum) {
-        this.material = material;
-        this.redraw();
-    }
-
-    setEngraving(text: string) {
-        this.engraving = text;
-        this.redraw();
-    }
-
-    redraw() {
-        this.canvasService.redraw(this.form,this.size,this.engraving,undefined, '#000');
+    draw() {
+        console.log(this.form, this.size);
+        this.canvasService.draw(this.form, this.size);
     }
 }

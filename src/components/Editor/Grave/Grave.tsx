@@ -1,17 +1,17 @@
 import * as React from "react";
 import GraveGraphicService from "../../../services/GraveGrapicsService/GraveGraphicService";
+import './style.css'
 
 type GraveProps = {
     className: string,
+    graveGraphicService: GraveGraphicService,
 }
 
 export default class Grave extends React.Component<GraveProps> {
     readonly canvasID = 'graveCanvas';
-    graveGraphicService: GraveGraphicService;
 
     constructor(props: GraveProps) {
         super(props);
-        this.graveGraphicService = new GraveGraphicService(this.canvasID);
     }
 
     render() {
@@ -24,6 +24,6 @@ export default class Grave extends React.Component<GraveProps> {
     }
 
     componentDidMount() {
-        this.graveGraphicService.init();
+        this.props.graveGraphicService.init(this.canvasID);
     }
 }

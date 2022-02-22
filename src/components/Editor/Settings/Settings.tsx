@@ -15,9 +15,11 @@ import {
     DEFAULT_QUANTITY,
     DEFAULT_SIZE
 } from "../../../configs/config";
+import GraveGraphicService from "../../../services/GraveGrapicsService/GraveGraphicService";
 
 type SettingsProps = {
     className: string,
+    graveGraphicService: GraveGraphicService,
 }
 
 export default class Settings extends React.Component<SettingsProps> {
@@ -26,7 +28,7 @@ export default class Settings extends React.Component<SettingsProps> {
     }
 
     render() {
-        const {className} = this.props;
+        const {className, graveGraphicService} = this.props;
         return (
             <div className={className}>
                 <QuantitySelector
@@ -51,6 +53,8 @@ export default class Settings extends React.Component<SettingsProps> {
                         selectedID={DEFAULT_FORM}
                         callback={(id) => {
                             store.dispatch(setForm(id));
+                            graveGraphicService.setForm(id);
+                            graveGraphicService.draw();
                             console.log('FormID = ' + id);
                         }}
                     />
@@ -68,6 +72,8 @@ export default class Settings extends React.Component<SettingsProps> {
                         selectedID={DEFAULT_SIZE}
                         callback={(id) => {
                             store.dispatch(setSize(id))
+                            graveGraphicService.setSize(id);
+                            graveGraphicService.draw();
                             console.log('SizeID = ' + id);
                         }}
                     />
