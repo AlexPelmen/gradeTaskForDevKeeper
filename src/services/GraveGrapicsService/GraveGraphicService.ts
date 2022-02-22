@@ -1,13 +1,13 @@
-import {GraveForm, GraveMaterial} from "./GraveGraphicsEnums";
 import CanvasService from "../CanvasService/CanvasService";
 import {DEFAULT_ENGRAVING, DEFAULT_FORM, DEFAULT_MATERIAL, DEFAULT_SIZE} from "../../configs/config";
+import {FormEnum, MaterialEnum, SizeEnum} from "../../types/enums";
 
 export default class GraveGraphicService {
     canvasService: CanvasService;
 
-    form: GraveForm;
-    size: number;
-    material: GraveMaterial;
+    form: FormEnum;
+    size: SizeEnum;
+    material: MaterialEnum;
     engraving: string;
 
     constructor(canvasID: string) {
@@ -22,17 +22,17 @@ export default class GraveGraphicService {
         this.canvasService.init();
     }
 
-    setForm(form: GraveForm) {
+    setForm(form: FormEnum) {
         this.form = form;
         this.redraw();
     }
 
-    setSize(size: number) {
+    setSize(size: SizeEnum) {
         this.size = size;
         this.redraw();
     }
 
-    setMaterial(material: GraveMaterial) {
+    setMaterial(material: MaterialEnum) {
         this.material = material;
         this.redraw();
     }

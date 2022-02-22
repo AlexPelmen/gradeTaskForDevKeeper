@@ -1,5 +1,5 @@
-import {GraveForm} from "../GraveGrapicsService/GraveGraphicsEnums";
 import {BACKGROUND_GRAVEYARD} from "../../configs/config";
+import {FormEnum} from "../../types/enums";
 
 export default class CanvasService {
     canvasID: string;
@@ -42,7 +42,7 @@ export default class CanvasService {
      * @param color
      */
     redraw(
-        form: GraveForm,
+        form: FormEnum,
         scale: number,
         text: string,
         texture?: string,

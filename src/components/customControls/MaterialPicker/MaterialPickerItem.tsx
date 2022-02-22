@@ -1,12 +1,13 @@
 import * as React from "react";
 import './style.css'
+import {MaterialEnum} from "../../../types/enums";
 
 type MaterialPickerItemProps = {
-    id: string,
+    id: MaterialEnum,
     isSelected: boolean,
     texture?: string,
     color?: string,
-    callback: (id: string) => void,
+    callback: (id: MaterialEnum) => void,
 }
 
 export default class MaterialPickerItem extends React.Component<MaterialPickerItemProps> {

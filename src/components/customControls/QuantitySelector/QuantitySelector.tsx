@@ -1,6 +1,7 @@
 import React from "react";
 import './style.css';
 import QuantitySelectorItem from "./QuantitySelectorItem";
+import {store} from "../../../store";
 
 type QuantitySelectorProps = {
     caption: string,
@@ -18,10 +19,14 @@ export default class QuantitySelector extends React.Component<QuantitySelectorPr
     constructor(props: QuantitySelectorProps) {
         super(props);
         this.state = {selectedNumber: this.props.selectedNumber}
+        store.subscribe(() => {
+            const newQuantity = store.getState().editor.quantity
+            this.setState({selectedNumber: newQuantity})
+        })
     }
 
     render() {
-        const {className, caption} = this.props;
+        const {className, caption, callback} = this.props;
         return (
             <div className={className + ' custom-quantity-selector-wrapper'} >
                 <div className='custom-quantity-selector-frame'>
@@ -30,14 +35,14 @@ export default class QuantitySelector extends React.Component<QuantitySelectorPr
                         <div className='custom-quantity-selector-current-number'>{this.state.selectedNumber}</div>
                     </div>
                     <div className='custom-quantity-selector-numbers'>
-                        {this.getNumbers()}
+                        {this.getNumbers(callback)}
                     </div>
                 </div>
             </div>
         )
     }
 
-    getNumbers() {
+    getNumbers(callback: (number: number) => void) {
         const batchHTML = [];
         for(let number = 1; number < this.props.numbers + 1; number++) {
             const isSelected = number === this.state.selectedNumber;
@@ -45,15 +50,10 @@ export default class QuantitySelector extends React.Component<QuantitySelectorPr
                 caption={number}
                 id={number}
                 isSelected={isSelected}
-                callback={this.click.bind(this)}
+                callback={callback}
             />);
         }
-
+        
         return batchHTML;
-    }
-
-    click(number: number) {
-        this.setState({selectedNumber: number});
-        this.props.callback(number);
     }
 }

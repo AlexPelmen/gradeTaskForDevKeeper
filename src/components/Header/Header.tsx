@@ -1,6 +1,8 @@
 import * as React from "react";
 import './style.css';
 import CustomCheckBox from "../customControls/Checkbox/CustomCheckBox";
+import {store} from "../../store";
+import {changeModuleSystem} from "../../store/actions/moduleSystemActions";
 
 export default class Header extends React.Component {
     render() {
@@ -26,6 +28,7 @@ export default class Header extends React.Component {
                         name='module-system'
                         value='true'
                         callback={(checked) => {
+                            store.dispatch(changeModuleSystem(checked))
                             console.log(checked ? 'модульная' : 'не модульная' )
                         }}
                     >Модульная система</CustomCheckBox>
